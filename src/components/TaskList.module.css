@@ -1,0 +1,213 @@
+.section {
+  width: 100%;
+  max-width: 736px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.inputGroup {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: -1.687rem;
+}
+
+.inputGroup input {
+  width: 100%;
+  max-width: 638px;
+  max-height: 54px;
+  padding: 1rem;
+  background: var(--gray-500);
+  border-radius: 8px;
+  border: 1px solid var(--gray-700);
+
+  font-size: 1rem;
+  color: var(--gray-300);
+  line-height: 1.4;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border: 1px solid var(--purple-dark);
+  color: var(--gray-100);
+}
+
+.inputGroup button {
+  padding: 1rem;
+  background-color: var(--blue-dark);
+  border: none;
+  border-radius: 8px;
+
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--gray-100);
+
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.inputGroup button:hover {
+  background-color: var(--blue);
+}
+
+.headerTask {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerTask .createdTasks {
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.7;
+
+  color: var(--blue);
+}
+
+.headerTask .completedTasks {
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--purple);
+}
+
+.headerTask span {
+  width: 1.5rem;
+  height: auto;
+  margin-left: 8px;
+  padding: 2px 8px;
+  background: var(--gray-400);
+  border-radius: 999px;
+
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--gray-200);
+}
+
+.tasks {
+  list-style-type: none;
+  margin-top: 1.5rem;
+}
+
+.tasks li {
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  padding: 1rem;
+  background-color: var(--gray-500);
+
+  border: 1px solid var(--gray-400);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  gap: 0.75rem;
+}
+
+.checkboxContainer {
+  display: block;
+  position: relative;
+  padding-left: 36px;
+
+  cursor: pointer;
+}
+
+.checkboxContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkboxContainer .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  border: 2px solid var(--blue);
+  border-radius: 50%;
+}
+
+.checkboxContainer:hover input ~ .checkmark {
+  background-color: rgba(30, 111, 159, 0.2);
+  border: 2px solid var(--blue-dark);
+  transition: background-color 0.3s;
+}
+
+.checkboxContainer input:checked ~ .checkmark {
+  border: none;
+  background-color: var(--purple-dark);
+}
+
+.checkboxContainer:hover input:checked ~ .checkmark {
+  background-color: var(--purple);
+}
+
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.checkboxContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkboxContainer .checkmark:after {
+  content: '';
+  width: 7.31px;
+  height: 4.69px;
+  position: absolute;
+  display: none;
+  left: 33%;
+  top: 33%;
+  border: solid var(--gray-100);
+  border-width: 0 0 2px 2px;
+  transform: rotate(-45deg);
+}
+
+.tasks p {
+  max-width: 632px;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--gray-100);
+}
+
+.tasks.completed p {
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
+
+.tasks button {
+  background: transparent;
+  border: 0;
+}
+
+.tasks button svg {
+  color: var(--gray-300);
+  transition: all 0.3s;
+}
+
+.tasks button:hover svg:hover {
+  box-sizing: initial;
+  padding: 5px;
+  background: #333333;
+  border-radius: 4px;
+  color: var(--danger);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
