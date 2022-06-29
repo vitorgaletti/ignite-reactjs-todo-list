@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 ('uuid');
 
+import imgClipboard from '/src/assets/img/Clipboard.png';
+
 import styles from './TaskList.module.css';
 
 interface TaskListProps {
@@ -73,7 +75,7 @@ export function TaskList() {
 
         {tasks.length === 0 && (
           <div className={styles.tasksNotCreated}>
-            <img src="./src/assets/img/Clipboard.png" alt="Prancheta" />
+            <img src={imgClipboard} alt="Prancheta" />
             <strong>Você ainda não tem tarefas cadastradas</strong>
             <span>Crie tarefas e organize seus itens a fazer</span>
           </div>
